@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { questions } from '../data/questions'
 
-const LABELS = ['a', 'b', 'c', 'd']
-
 const slideVariants = {
   enter: (dir) => ({
     x: dir > 0 ? 60 : -60,
@@ -27,14 +25,13 @@ function calculateResult(answers) {
   answers.forEach((answerIndex, qIndex) => {
     const question = questions[qIndex]
     const choice = question.choices[answerIndex]
-    Object.entries(choice.scores).forEach(([philosopher, score]) => {
-      scores[philosopher] = (scores[philosopher] || 0) + score
+    Object.entries(choice.scores).forEach(([type, score]) => {
+      scores[type] = (scores[type] || 0) + score
     })
   })
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1])
   return {
-    primary: sorted[0]?.[0] || 'epicurus',
-    secondary: sorted[1]?.[0] || 'aristotle',
+    primary: sorted[0]?.[0] || 'approval',
     scores,
   }
 }
@@ -48,7 +45,7 @@ export default function QuestionPage() {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   const question = questions[currentIndex]
-  const progress = ((currentIndex) / questions.length) * 100
+  const progress = (currentIndex / questions.length) * 100
   const isLast = currentIndex === questions.length - 1
 
   const handleSelect = useCallback((choiceIndex) => {
@@ -62,7 +59,7 @@ export default function QuestionPage() {
       if (isLast) {
         const result = calculateResult(newAnswers)
         navigate(`/result/${result.primary}`, {
-          state: { secondary: result.secondary, scores: result.scores },
+          state: { scores: result.scores },
         })
         return
       }
@@ -113,7 +110,7 @@ export default function QuestionPage() {
               animate="center"
               exit="exit"
             >
-              {/* Question number ornament */}
+              {/* Question number */}
               <div className="text-center mb-6">
                 <div className="ornament-line mb-3">
                   <span className="text-gold font-sans-jp text-xs tracking-widest opacity-70">
@@ -145,7 +142,7 @@ export default function QuestionPage() {
                       transition: { delay: index * 0.08, duration: 0.4 },
                     }}
                   >
-                    <span className="choice-label">{LABELS[index].toUpperCase()}</span>
+                    <span className="choice-label">{String.fromCharCode(65 + index)}</span>
                     <span>{choice.text}</span>
                   </motion.button>
                 ))}
@@ -155,7 +152,6 @@ export default function QuestionPage() {
         </div>
       </div>
 
-      {/* Atmospheric quote */}
       <div className="pb-20 px-6 text-center">
         <p className="font-sans-jp text-xs text-ivory-dim opacity-30 italic">
           「正解はありません。直感で選んでください。」
