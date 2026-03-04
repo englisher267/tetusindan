@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <radialGradient id="bg-c" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8f0ff"/>
+      <stop offset="100%" stop-color="#c0d8ff"/>
+    </radialGradient>
+  </defs>
+  <circle cx="140" cy="140" r="140" fill="url(#bg-c)"/>
+  <!-- Back figure (follower - smaller/faded) -->
+  <ellipse cx="168" cy="180" rx="35" ry="42" fill="#8ab8f0" opacity="0.7"/>
+  <circle cx="168" cy="138" r="25" fill="#8ab8f0" opacity="0.7"/>
+  <circle cx="160" cy="134" r="4" fill="#1a1a2e" opacity="0.6"/>
+  <circle cx="176" cy="134" r="4" fill="#1a1a2e" opacity="0.6"/>
+  <path d="M161,144 Q168,150 175,144" stroke="#5a8ad0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <!-- Main figure -->
+  <ellipse cx="115" cy="178" rx="40" ry="50" fill="#5b9cf0"/>
+  <circle cx="115" cy="128" r="32" fill="#5b9cf0"/>
+  <!-- Eyes -->
+  <circle cx="104" cy="124" r="6" fill="white"/>
+  <circle cx="126" cy="124" r="6" fill="white"/>
+  <circle cx="106" cy="125" r="3.5" fill="#1a1a2e"/>
+  <circle cx="128" cy="125" r="3.5" fill="#1a1a2e"/>
+  <circle cx="107" cy="123" r="1.3" fill="white"/>
+  <circle cx="129" cy="123" r="1.3" fill="white"/>
+  <!-- Cheeks -->
+  <ellipse cx="96" cy="134" rx="7" ry="5" fill="#4080d0" opacity="0.5"/>
+  <ellipse cx="134" cy="134" rx="7" ry="5" fill="#4080d0" opacity="0.5"/>
+  <!-- Mouth -->
+  <path d="M107,136 Q115,143 123,136" stroke="#3a70b0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Arms reaching forward -->
+  <ellipse cx="75" cy="180" rx="18" ry="13" fill="#4a8ce0" transform="rotate(-20 75 180)"/>
+  <ellipse cx="155" cy="185" rx="18" ry="13" fill="#4a8ce0" transform="rotate(10 155 185)"/>
+  <!-- Arrow showing following -->
+  <path d="M145,155 L160,148" stroke="#2a60b0" stroke-width="2.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.6"/>
+  <!-- Decorative waves -->
+  <path d="M50,220 Q70,210 90,220 Q110,230 130,220" stroke="#7ab0f0" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M160,225 Q180,215 200,225 Q220,235 240,225" stroke="#7ab0f0" stroke-width="2" fill="none" opacity="0.4"/>
+  <!-- Stars -->
+  <text x="48" y="80" font-size="18" opacity="0.7">🫥</text>
+  <text x="200" y="70" font-size="16" opacity="0.6">✨</text>
+  <text x="220" y="160" font-size="14" opacity="0.5">〜</text>
+  <text x="40" y="160" font-size="14" opacity="0.5">〜</text>
+</svg>

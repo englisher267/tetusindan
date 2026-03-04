@@ -1,224 +1,227 @@
-// Scoring: each choice maps to moyamoya type IDs with score increments
-// Types: approval, conformist, outsider, justice
+// 診断ロジック
+// approval  = 承認泥棒（クレクレ）型
+// conformist = 同調圧力の奴隷（イエスマン）型
+// outsider  = 孤高の迷子（アウトサイダー）型
+// justice   = 正論の氷山（ジャスティス）型
 
 export const questions = [
   {
     id: 1,
-    text: 'SNSに写真を投稿した後、どうしてしまう？',
+    text: 'LINEの返信、どのタイミングで送る？',
     choices: [
       {
-        text: '「いいね」が何件ついたか、ついつい何度も確認してしまう',
-        scores: { approval: 3 },
+        text: '見たらすぐ返す',
+        scores: { justice: 3 },
       },
       {
-        text: 'みんなが投稿しているから自分もしたけど、反応が怖くて後悔する',
-        scores: { conformist: 2, approval: 1 },
+        text: '少し時間を置いてから返す',
+        scores: { approval: 2, conformist: 2 },
       },
       {
-        text: 'どうせ自分の感性は理解されないと思いながら、あえて投稿した',
+        text: '気が向いた時に返す',
         scores: { outsider: 3 },
       },
       {
-        text: '誤字や事実誤認がないか気になって、投稿後も何度も見直す',
-        scores: { justice: 3 },
+        text: '悩んで結局遅くなる',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 2,
-    text: 'グループLINEにメッセージが届いた。返信するとき、何を考える？',
+    text: 'グループLINEで自分の発言が無視された。どうする？',
     choices: [
       {
-        text: '即レスすると「暇な人」と思われそうで、わざと時間をずらしてしまう',
-        scores: { conformist: 3 },
-      },
-      {
-        text: '自分のメッセージで場が凍ったらどうしよう、と慎重になりすぎる',
-        scores: { approval: 3 },
-      },
-      {
-        text: '返信は面倒だけど、無視したら悪いかなと思いつつ放置してしまう',
-        scores: { outsider: 2, conformist: 1 },
-      },
-      {
-        text: '誤字がないか、内容が正確かをちゃんと確認してから送る',
+        text: '気にせず別の話題を振る',
         scores: { justice: 3 },
+      },
+      {
+        text: '誰かが反応してくれるまで様子を見る',
+        scores: { approval: 2, conformist: 2 },
+      },
+      {
+        text: '少しモヤるけど何もしない',
+        scores: { outsider: 2, conformist: 2 },
+      },
+      {
+        text: '自分の発言がつまらなかったのか気になる',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 3,
-    text: '飲み会で自分とは違う意見が出た。あなたは？',
+    text: '友達の幸せ報告を見た時の気持ちは？',
     choices: [
       {
-        text: '場の雰囲気を壊したくないので、とりあえず「そうだね」と合わせる',
-        scores: { conformist: 3 },
-      },
-      {
-        text: 'みんながどちらの意見に乗っているか、様子をうかがって判断する',
-        scores: { approval: 2, conformist: 1 },
-      },
-      {
-        text: '心の中で「それは違う」と思いながら、どうせ理解されないと黙る',
-        scores: { outsider: 3 },
-      },
-      {
-        text: '冷静に、でもはっきりと自分の意見を論理的に述べる',
+        text: '素直に嬉しい',
         scores: { justice: 3 },
+      },
+      {
+        text: '嬉しいけど少し複雑',
+        scores: { approval: 2 },
+      },
+      {
+        text: '自分と比べてしまう',
+        scores: { approval: 3 },
+      },
+      {
+        text: '特に何も感じない',
+        scores: { outsider: 3 },
       },
     ],
   },
   {
     id: 4,
-    text: '仕事や学校でミスをしてしまった。真っ先に気になるのは？',
+    text: '「今度飲もう」って言われたけど日程が決まらない。どうする？',
     choices: [
       {
-        text: '周りが自分をどう見ているか、ずっと気になって仕事が手につかない',
-        scores: { approval: 3 },
+        text: '自分から日程を提案する',
+        scores: { justice: 3 },
       },
       {
-        text: '迷惑をかけてしまったと思って、何度も謝りたくなる',
+        text: '相手から連絡が来るまで待つ',
         scores: { conformist: 3 },
       },
       {
-        text: '「でも環境や状況のせいもある」と内心思ってしまっている',
-        scores: { outsider: 2, justice: 1 },
+        text: '社交辞令だと思ってスルーする',
+        scores: { outsider: 3 },
       },
       {
-        text: 'なぜミスが起きたか、原因を徹底的に洗い出そうとする',
-        scores: { justice: 3 },
+        text: 'なんで決まらないんだろうとモヤモヤする',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 5,
-    text: '仲の良い友達から急に既読スルーされた。どうする？',
+    text: 'インスタのストーリー、投稿する前にどうする？',
     choices: [
       {
-        text: '何か悪いことをしたんだろうか、とずっと考えてしまう',
+        text: '見直さず勢いで投稿',
+        scores: { outsider: 2 },
+      },
+      {
+        text: '軽く確認してから投稿',
+        scores: { justice: 3 },
+      },
+      {
+        text: '何度も見直してから投稿',
         scores: { approval: 3 },
       },
       {
-        text: '相手にも事情があるだろうと、自分に言い聞かせて待つ',
-        scores: { conformist: 3 },
-      },
-      {
-        text: '「まあ、そういうもんか」と思いつつ、少しモヤる',
-        scores: { outsider: 2, approval: 1 },
-      },
-      {
-        text: '「既読したなら返信するのが普通では」と正直思う',
-        scores: { justice: 3 },
+        text: '投稿するか悩んで結局やめる',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 6,
-    text: '自分が呼ばれていない集まりのSNS投稿を見た。正直どう感じる？',
+    text: '「どっちでもいいよ」って言われた。どう感じる？',
     choices: [
       {
-        text: '「なんで呼んでくれなかったんだろ」とモヤりながら「いいね」を押す',
-        scores: { approval: 3 },
+        text: 'じゃあ自分が決める',
+        scores: { justice: 2, outsider: 2 },
       },
       {
-        text: '自分が何か失礼なことをしたのかと、思い当たる節を探してしまう',
-        scores: { conformist: 2, approval: 1 },
+        text: '本当にどっちでもいいのか確認したくなる',
+        scores: { conformist: 3 },
       },
       {
-        text: '「別にそういう集まりは興味ないし」と思いつつ、少しだけモヤる',
-        scores: { outsider: 3 },
+        text: '逆に選べなくなる',
+        scores: { conformist: 3 },
       },
       {
-        text: '「なぜ自分が呼ばれなかったのか」理由を論理的に考えてしまう',
-        scores: { justice: 3 },
+        text: '丸投げされた感じがする',
+        scores: { approval: 2, justice: 1 },
       },
     ],
   },
   {
     id: 7,
-    text: '「最近どう？」と聞かれたとき、本音を言えない。なぜ？',
+    text: '自分の意見を言う時、どうする？',
     choices: [
       {
-        text: '正直に言って引かれたり、過剰に心配されるのが怖いから',
-        scores: { approval: 2, outsider: 1 },
+        text: '思ったことをはっきり言う',
+        scores: { justice: 2, outsider: 2 },
       },
       {
-        text: '相手が求めていそうな答えを返したほうが、関係がうまくいくから',
+        text: '周りの様子を見てから言う',
         scores: { conformist: 3 },
       },
       {
-        text: 'どうせ深く理解してもらえないから、当たり障りなく返してしまう',
-        scores: { outsider: 3 },
+        text: '言いたいけど言えないことが多い',
+        scores: { conformist: 2, outsider: 1 },
       },
       {
-        text: '正確に状況を伝えようとすると長くなって、相手が困るから',
-        scores: { justice: 3 },
+        text: '自分の意見がよくわからない',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 8,
-    text: 'SNSで誰かが明らかに間違った情報を拡散している。あなたは？',
+    text: '褒められた時、どう返す？',
     choices: [
       {
-        text: '指摘したいけど、角が立つかもしれない。「いいね」だけしてしまう',
-        scores: { conformist: 2, approval: 1 },
-      },
-      {
-        text: '穏やかにコメントしたけど、その後の反応がずっと気になる',
-        scores: { approval: 3 },
-      },
-      {
-        text: '「どうせ言っても聞かない」と思って、見なかったことにする',
-        scores: { outsider: 3 },
-      },
-      {
-        text: '正しい情報を、丁寧かつはっきりコメントする（当然の義務だと思う）',
+        text: '「ありがとう！」と素直に受け取る',
         scores: { justice: 3 },
+      },
+      {
+        text: '「そんなことないです」と謙遜する',
+        scores: { conformist: 3 },
+      },
+      {
+        text: '嬉しいけど照れて否定してしまう',
+        scores: { conformist: 2 },
+      },
+      {
+        text: 'もっと褒めてほしいと思う',
+        scores: { approval: 3 },
       },
     ],
   },
   {
     id: 9,
-    text: 'グループ作業で自分の意見がスルーされた。どうする？',
+    text: '友達が失敗した時、どう思う？',
     choices: [
       {
-        text: '「みんなが決めたことに従おう」と心に言い聞かせて黙る',
-        scores: { conformist: 3 },
+        text: '心配になって声をかける',
+        scores: { justice: 3 },
       },
       {
-        text: '「私の言い方が悪かったのかな」と自分を責める',
+        text: '少しホッとする自分がいる',
         scores: { approval: 3 },
       },
       {
-        text: '「まあ、こういうことはよくある。わかってもらえないもんだ」と諦める',
-        scores: { outsider: 3 },
+        text: '自分じゃなくてよかったと思う',
+        scores: { outsider: 2, approval: 1 },
       },
       {
-        text: '「それでは問題が起きる」と論拠を添えてもう一度主張する',
-        scores: { justice: 3 },
+        text: '特に何も思わない',
+        scores: { outsider: 3 },
       },
     ],
   },
   {
     id: 10,
-    text: '今の自分に一番近い「モヤモヤ」はどれ？',
+    text: '進路や将来について、どう考えてる？',
     choices: [
       {
-        text: '「自分のことを周りがどう思っているか」が常に頭の片隅にある',
-        scores: { approval: 4 },
+        text: 'やりたいことがはっきりしている',
+        scores: { justice: 3 },
       },
       {
-        text: '「断れなかった」「また合わせてしまった」を繰り返している',
-        scores: { conformist: 4 },
+        text: 'まだ決まってなくて焦っている',
+        scores: { approval: 3 },
       },
       {
-        text: '「どうせ理解されない」という感覚がずっとある',
-        scores: { outsider: 4 },
+        text: '周りに合わせればいいと思っている',
+        scores: { conformist: 3 },
       },
       {
-        text: '「正しいのに、なぜ伝わらないんだ」と思うことがよくある',
-        scores: { justice: 4 },
+        text: '考えるのが怖い',
+        scores: { outsider: 2, approval: 1 },
       },
     ],
   },

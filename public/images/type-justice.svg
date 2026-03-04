@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <radialGradient id="bg-j" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0fff5"/>
+      <stop offset="100%" stop-color="#b8f0dc"/>
+    </radialGradient>
+  </defs>
+  <circle cx="140" cy="140" r="140" fill="url(#bg-j)"/>
+  <!-- Robe/formal outfit -->
+  <ellipse cx="140" cy="185" rx="54" ry="55" fill="#2ecb8f"/>
+  <!-- Collar/robe details -->
+  <path d="M115,148 L140,168 L165,148" fill="#1aa870" opacity="0.8"/>
+  <!-- Body -->
+  <ellipse cx="140" cy="195" rx="48" ry="48" fill="#2ecb8f"/>
+  <!-- Head -->
+  <circle cx="140" cy="115" r="33" fill="#2ecb8f"/>
+  <!-- Ear -->
+  <ellipse cx="124" cy="87" rx="8" ry="20" fill="#2ecb8f"/>
+  <ellipse cx="124" cy="87" rx="4.5" ry="15" fill="#a0f0d8"/>
+  <ellipse cx="156" cy="87" rx="8" ry="20" fill="#2ecb8f"/>
+  <ellipse cx="156" cy="87" rx="4.5" ry="15" fill="#a0f0d8"/>
+  <!-- Eyes (confident/sharp) -->
+  <circle cx="129" cy="112" r="6.5" fill="white"/>
+  <circle cx="151" cy="112" r="6.5" fill="white"/>
+  <circle cx="131" cy="112" r="4" fill="#1a1a2e"/>
+  <circle cx="153" cy="112" r="4" fill="#1a1a2e"/>
+  <circle cx="132" cy="110.5" r="1.5" fill="white"/>
+  <circle cx="154" cy="110.5" r="1.5" fill="white"/>
+  <!-- Eyebrows (stern/confident) -->
+  <path d="M122,104 L136,107" stroke="#1a4a3a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M145,107 L159,104" stroke="#1a4a3a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Cheeks -->
+  <ellipse cx="120" cy="120" rx="7" ry="5" fill="#18a870" opacity="0.4"/>
+  <ellipse cx="160" cy="120" rx="7" ry="5" fill="#18a870" opacity="0.4"/>
+  <!-- Firm mouth/slight smile -->
+  <path d="M131,126 Q140,132 149,126" stroke="#18a870" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Scale/balance symbol -->
+  <line x1="140" y1="158" x2="140" y2="168" stroke="#1aa870" stroke-width="2"/>
+  <line x1="118" y1="160" x2="162" y2="160" stroke="#1aa870" stroke-width="2.5"/>
+  <circle cx="118" cy="163" r="6" fill="#f0fdf8" stroke="#1aa870" stroke-width="1.5"/>
+  <circle cx="162" cy="163" r="6" fill="#f0fdf8" stroke="#1aa870" stroke-width="1.5"/>
+  <!-- Arms -->
+  <ellipse cx="88" cy="190" rx="20" ry="14" fill="#1aa870" transform="rotate(-15 88 190)"/>
+  <ellipse cx="192" cy="190" rx="20" ry="14" fill="#1aa870" transform="rotate(15 192 190)"/>
+  <!-- Decorative stars/sparkles -->
+  <text x="48" y="72" font-size="18" opacity="0.75">⭐</text>
+  <text x="200" y="65" font-size="16" opacity="0.7">⭐</text>
+  <text x="215" y="165" font-size="14" opacity="0.6">✨</text>
+  <text x="42" y="168" font-size="14" opacity="0.6">✨</text>
+  <text x="220" y="120" font-size="16" opacity="0.65">⚖️</text>
+</svg>

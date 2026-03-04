@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <radialGradient id="bg-a" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe8ed"/>
+      <stop offset="100%" stop-color="#ffc8d5"/>
+    </radialGradient>
+  </defs>
+  <circle cx="140" cy="140" r="140" fill="url(#bg-a)"/>
+  <!-- Body -->
+  <ellipse cx="140" cy="175" rx="52" ry="58" fill="#ff8fa3"/>
+  <!-- Head -->
+  <circle cx="140" cy="108" r="36" fill="#ff8fa3"/>
+  <!-- Eyes -->
+  <circle cx="128" cy="104" r="6.5" fill="white"/>
+  <circle cx="152" cy="104" r="6.5" fill="white"/>
+  <circle cx="130" cy="105" r="3.8" fill="#1a1a2e"/>
+  <circle cx="154" cy="105" r="3.8" fill="#1a1a2e"/>
+  <circle cx="131" cy="103" r="1.5" fill="white"/>
+  <circle cx="155" cy="103" r="1.5" fill="white"/>
+  <!-- Cheeks -->
+  <ellipse cx="120" cy="115" rx="8" ry="5" fill="#ff6b91" opacity="0.5"/>
+  <ellipse cx="160" cy="115" rx="8" ry="5" fill="#ff6b91" opacity="0.5"/>
+  <!-- Beak/mouth -->
+  <path d="M133,116 Q140,123 147,116" stroke="#e0607a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Phone -->
+  <rect x="158" y="148" width="28" height="46" rx="5" fill="#2d2d3a"/>
+  <rect x="161" y="153" width="22" height="34" rx="2" fill="#7dd6f5"/>
+  <!-- Notification dots on phone -->
+  <circle cx="172" cy="161" r="3" fill="#ff5b7b"/>
+  <circle cx="180" cy="161" r="3" fill="#ff5b7b"/>
+  <!-- Wings/arms -->
+  <ellipse cx="88" cy="178" rx="22" ry="16" fill="#ff7a94" transform="rotate(-15 88 178)"/>
+  <ellipse cx="192" cy="178" rx="22" ry="16" fill="#ff7a94" transform="rotate(15 192 178)"/>
+  <!-- Floating hearts -->
+  <text x="50" y="85" font-size="22" opacity="0.85">♥</text>
+  <text x="195" y="72" font-size="17" opacity="0.75">♥</text>
+  <text x="210" y="108" font-size="13" opacity="0.6">♥</text>
+  <text x="38" y="115" font-size="13" opacity="0.6">♥</text>
+  <!-- Sparkles -->
+  <text x="65" y="55" font-size="16" opacity="0.7">✨</text>
+  <text x="200" y="50" font-size="14" opacity="0.6">✨</text>
+</svg>
