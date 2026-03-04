@@ -91,9 +91,9 @@ export default function ResultPage() {
                 <span style={{ fontSize: '1.5rem' }}>{type.emoji}</span>
               </div>
               <div>
-                <p className="font-sans-jp text-xs text-ivory opacity-50 mb-0.5">ダイレクトメッセージ</p>
-                <p className="font-sans-jp text-sm text-ivory font-medium">{type.dmFrom}</p>
-                <p className="font-sans-jp text-xs text-ivory-dim opacity-60 mt-0.5">「診断結果をお伝えします」</p>
+                <p className="font-sans-jp text-xs text-ivory opacity-50 mb-0.5">診断結果</p>
+                <p className="font-sans-jp text-sm font-medium" style={{ color: type.color }}>{type.shortName}</p>
+                <p className="font-sans-jp text-xs text-ivory-dim opacity-60 mt-0.5">あなたのモヤモヤタイプが判明しました</p>
               </div>
             </motion.div>
           </motion.div>
@@ -157,25 +157,11 @@ export default function ResultPage() {
           </p>
         </motion.div>
 
-        {/* 哲学的病名 */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: phase === 'revealed' ? 1 : 0, y: phase === 'revealed' ? 0 : 16 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="card-glass p-4 mb-4 text-center"
-          style={{ borderColor: type.color + '30' }}
-        >
-          <p className="font-sans-jp text-xs text-ivory-dim opacity-50 mb-1 tracking-wider">哲学的な病名</p>
-          <p className="font-serif-jp text-base text-ivory" style={{ color: type.color }}>
-            {type.diseaseName}
-          </p>
-        </motion.div>
-
         {/* Characteristics */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: phase === 'revealed' ? 1 : 0, y: phase === 'revealed' ? 0 : 16 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
           className="mb-5"
         >
           <div className="flex flex-wrap gap-2">
@@ -195,13 +181,31 @@ export default function ResultPage() {
           </div>
         </motion.div>
 
+        {/* 哲学的病名 */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: phase === 'revealed' ? 1 : 0, y: phase === 'revealed' ? 0 : 16 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="card-glass p-4 mb-4 text-center"
+          style={{ borderColor: type.color + '30' }}
+        >
+          <p className="font-sans-jp text-xs text-ivory-dim opacity-50 mb-1 tracking-wider">哲学的な病名</p>
+          <p className="font-serif-jp text-base text-ivory" style={{ color: type.color }}>
+            {type.diseaseName}
+          </p>
+        </motion.div>
+
         {/* DM診断書 */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: phase === 'revealed' ? 1 : 0, y: phase === 'revealed' ? 0 : 20 }}
           transition={{ delay: 0.7, duration: 0.7 }}
-          className="dm-card mb-6"
+          className="mb-6"
         >
+          <div className="ornament-line mb-4">
+            <span className="text-gold text-xs tracking-widest font-sans-jp opacity-50">哲学者からのメッセージ</span>
+          </div>
+        <div className="dm-card">
           {/* DM header */}
           <div className="dm-card-header" style={{ borderColor: type.color + '30' }}>
             <div className="dm-avatar" style={{ background: type.colorDim, borderColor: type.color + '60' }}>
@@ -234,6 +238,7 @@ export default function ResultPage() {
               パネル #{type.panelNumber} またはフルレポートで公開
             </p>
           </div>
+        </div>
         </motion.div>
 
         {/* CTAs */}

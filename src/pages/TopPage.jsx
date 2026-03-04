@@ -49,7 +49,7 @@ export default function TopPage() {
           className="mb-6"
         >
           <p className="font-sans-jp text-xs tracking-widest text-gold opacity-70 mb-3">
-            なんかモヤモヤする展 × 哲学者たちの知恵袋
+            なんかモヤモヤする展 — モヤモヤタイプ診断
           </p>
           <div className="ornament-line">
             <span className="text-gold text-xs tracking-widest font-sans-jp opacity-50">MOYAMOYA DIAGNOSIS</span>
@@ -91,7 +91,7 @@ export default function TopPage() {
           variants={fadeUp}
           className="text-ivory-dim font-sans-jp text-xs leading-relaxed mb-8 opacity-70"
         >
-          診断後、哲学者からDMが届きます。
+          診断後、あなたのタイプに合った哲学者からメッセージが届きます。
         </motion.p>
 
         {/* Mood tags */}
